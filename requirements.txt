@@ -2,3 +2,5 @@ flask
 flask-sqlalchemy 
 flask-login 
 flask-wtf
+Flask-Migrate 
+psycopg2-binary
