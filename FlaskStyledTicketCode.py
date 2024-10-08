@@ -53,7 +53,7 @@ def register():
         db.session.commit()
         flash("User registered successfully! Please log in.")
         return redirect(url_for('login'))
-    return render_template('register.html')
+    return render_template('https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/CSS/html/register.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -67,13 +67,13 @@ def login():
             return redirect(url_for('dashboard'))
         else:
             flash('Login failed. Check username and password.')
-    return render_template('login.html')
+    return render_template('https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/CSS/html/login.html')
 
 @app.route('/dashboard')
 @login_required
 def dashboard():
     user_tickets = Ticket.query.filter_by(user_id=current_user.id).all()
-    return render_template('dashboard.html', tickets=user_tickets)
+    return render_template('https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/CSS/html/dashboard.html', tickets=user_tickets)
 
 @app.route('/add_ticket', methods=['GET', 'POST'])
 @login_required
@@ -102,7 +102,7 @@ def view_all_tickets():
         return redirect(url_for('dashboard'))
     
     all_tickets = Ticket.query.all()  # Fetch all tickets
-    return render_template('admin_tickets.html', tickets=all_tickets)
+    return render_template('https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/CSS/html/sdmin_tickets.html', tickets=all_tickets)
 
 # Temporary admin creation (only for initial testing)
 @app.route('/make_admin/<username>')
