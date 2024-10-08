@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{ current_user.username }}!</h2>
+<h3>Your Tickets</h3>
+<ul>
+    {% for ticket in tickets %}
+    <li><strong>{{ ticket.title }}</strong>: {{ ticket.description }}</li>
+    {% else %}
+    <p>No tickets yet. <a href="{{ url_for('add_ticket') }}">Add a ticket</a></p>
+    {% endfor %}
+</ul>
+{% endblock %}
