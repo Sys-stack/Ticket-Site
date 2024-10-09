@@ -15,7 +15,7 @@ def hello():
         username = request.form.get("username")
         return f"Your User Name: {username}"
     form = fetch_html("https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html")
-    return render_template(form)
+    return Response(form, content_type = "text/html")
     
 if __name__ == '__main__':
     TicketCode.run(debug=True)
