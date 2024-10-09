@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import requests
 
-form = BytesIO(requests.get(https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html).content)
+form = BytesIO(requests.get("https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html").content)
 TicketCode = Flask(__name__)
 
 
