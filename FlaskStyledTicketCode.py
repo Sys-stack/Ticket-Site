@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from io import BytesIO
 import requests
 
 form = BytesIO(requests.get("https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html").content)
