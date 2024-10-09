@@ -7,4 +7,4 @@ def hello():
     return "Home Page"
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    TicketCode.run(debug=True)
