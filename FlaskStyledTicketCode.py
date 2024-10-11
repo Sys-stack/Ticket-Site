@@ -15,9 +15,10 @@ def main():
 def hello():
     if request.method == "POST":
         form = fetch_html("https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html")
+        Response(form, content_type = "text/html")
         username = request.form.get("username")
-        return Response(form, content_type = "text/html")
-            f"Your User Name: {username}"
+        
+        return f"Your User Name: {username}"
     elif request.method == "GET":
         return "idk at this point"
     else:
