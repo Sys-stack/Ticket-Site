@@ -12,8 +12,10 @@ TicketCode = Flask(__name__)
 @TicketCode.route("/home", methods = ["GET","POST"])
 def hello():
     if request.method == "POST":
+        
         username = request.form.get("username")
-        return f"Your User Name: {username}"
+        return redirect(url_for("hello")
+               f"Your User Name: {username}"
     form = fetch_html("https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html")
     return Response(form, content_type = "text/html")
     
