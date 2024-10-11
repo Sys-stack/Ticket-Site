@@ -13,14 +13,12 @@ def main():
 #first home page url
 @TicketCode.route("/home", methods = ["GET","POST"])
 def hello():
-    if request.method == "POST":
+    if request.method == "GET":
         form = fetch_html("https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html")
         Response(form, content_type = "text/html")
         username = request.form.get("username")
-        
+    elif request.method == "POST":
         return f"Your User Name: {username}"
-    elif request.method == "GET":
-        return "idk at this point"
     else:
         return "it's get lol"
     
