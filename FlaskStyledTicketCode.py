@@ -14,11 +14,15 @@ def main():
 @TicketCode.route("/home", methods = ["GET","POST"])
 def hello():
     if request.method == "POST":
-        
+        form = fetch_html("https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html")
         username = request.form.get("username")
-        return f"Your User Name: {username}"
-    form = fetch_html("https://raw.githubusercontent.com/Sys-stack/Ticket-Site/refs/heads/main/Form.html")
-    return Response(form, content_type = "text/html")
+        return Response(form, content_type = "text/html")
+            f"Your User Name: {username}"
+    elif request.method == "GET":
+        return "idk at this point"
+    else:
+        return "it's get lol"
+    
     
 if __name__ == '__main__':
     TicketCode.run(debug=True)
