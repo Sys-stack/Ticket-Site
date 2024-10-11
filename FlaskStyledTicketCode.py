@@ -7,7 +7,9 @@ def fetch_html(link):
     return response.content.decode('utf-8')
 TicketCode = Flask(__name__)
 
-
+@TicketCode.route("/")
+def main():
+    return "Main Page"
 #first home page url
 @TicketCode.route("/home", methods = ["GET","POST"])
 def hello():
